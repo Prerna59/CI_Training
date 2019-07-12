@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.math.BigDecimal;
 
 import ci.training.beans.Customer;
-import ci.training.beans.Wallet;
 import ci.training.repo.WalletRepoClass;
 import ci.training.service.WalletServiceImpl;
 import cucumber.api.java.en.Given;
@@ -16,18 +15,14 @@ public class CustomerCreationStepDef {
 	WalletRepoClass repo = new WalletRepoClass();;
 	WalletServiceImpl walletService;
 	Customer res;
-
 	@Given("^I have customerDetail$")
 	public void i_have_customerDetail() throws Throwable { 
 		System.out.println("Checking");
 		walletService = new WalletServiceImpl(repo);
 	}
-	
 	@When("^I have \"([^\"]*)\" \"([^\"]*)\" and (\\d+)$")
 	public void i_have_and(String name, String phoneNumber, BigDecimal balance) throws Throwable {
-		System.out.println("Heree");
 		res = walletService.createWallet(name, phoneNumber, balance);
-		System.out.println("Result"+res);
 	}
 
 	@Then("^I should get \"([^\"]*)\" \"([^\"]*)\" and (\\d+)$")
@@ -36,8 +31,4 @@ public class CustomerCreationStepDef {
 		assertThat(res.getPhoneNumber()).isEqualTo(phoneNumber);
 		assertThat(res.getWallet().getBalance()).isEqualTo(balance);
 	}
-
-	
-	
-
 }

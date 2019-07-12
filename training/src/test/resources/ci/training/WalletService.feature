@@ -22,5 +22,3 @@ Feature: Customer account
 		Given I have customerDetail
 		When I have "xyz" "9123456789" and 500
 		Then I should get "xyz" "9123456789" and 500
-
-		

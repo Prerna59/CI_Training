@@ -12,13 +12,9 @@ public class WalletRepoClass implements WalletRepo{
 		customerDetails.put(c.getPhoneNumber(), c);
 		return true;
 	}
-
 	@Override
 	public Customer find(String phoneNumber) {
-		// TODO Auto-generated method stub
-		System.out.println("Here"+customerDetails);
 		Customer c = customerDetails.get(phoneNumber) ;
-		System.out.println(c.getName());
 		return c;
 	}
 
