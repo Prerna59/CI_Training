@@ -17,7 +17,6 @@ public class WalletServiceImpl implements WalletService{
 	}
 
 	public Customer createWallet(String name, String phone, BigDecimal amount) {
-		
 		if(name == null || phone == null || amount == null){
 			throw new IllegalArgumentException();
 		}

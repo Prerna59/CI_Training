@@ -21,13 +21,6 @@ Feature: Customer account
 	Scenario: Creating customer account
 		Given I have customerDetail
 		When I have "xyz" "9123456789" and 500
-		Then I should be able to create customer
-		
-	Scenario: Finding customer account
-		Given I have phoneNumber
-		When I search "9123456789"
 		Then I should get "xyz" "9123456789" and 500
-		
-		
-		
+
 		
