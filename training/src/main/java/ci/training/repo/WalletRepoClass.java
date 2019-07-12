@@ -9,9 +9,6 @@ public class WalletRepoClass implements WalletRepo{
 	Map<String, Customer> customerDetails = new HashMap<String,Customer>();
 	@Override
 	public boolean save(Customer c) {
-		if(c==null) {
-			return false;
-		}
 		customerDetails.put(c.getPhoneNumber(), c);
 		return true;
 	}
