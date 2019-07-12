@@ -15,6 +15,7 @@ public class CustomerCreationStepDef {
 	WalletRepoClass repo = new WalletRepoClass();;
 	WalletServiceImpl walletService;
 	Customer res;
+	Customer result;
 	@Given("^I have customerDetail$")
 	public void i_have_customerDetail() { 
 		walletService = new WalletServiceImpl(repo);
@@ -26,8 +27,9 @@ public class CustomerCreationStepDef {
 
 	@Then("^I should get \"([^\"]*)\" \"([^\"]*)\" and (\\d+)$")
 	public void i_should_get_and(String name, String phoneNumber, BigDecimal balance){
-		assertThat(res.getName()).isEqualTo(name);
-		assertThat(res.getPhoneNumber()).isEqualTo(phoneNumber);
-		assertThat(res.getWallet().getBalance()).isEqualTo(balance);
+		result = repo.find(phoneNumber);
+		assertThat(result.getName()).isEqualTo(name);
+		assertThat(result.getPhoneNumber()).isEqualTo(phoneNumber);
+		assertThat(result.getWallet().getBalance()).isEqualTo(balance);
 	}
 }

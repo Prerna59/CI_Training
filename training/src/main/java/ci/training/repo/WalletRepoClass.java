@@ -14,7 +14,8 @@ public class WalletRepoClass implements WalletRepo{
 	}
 	@Override
 	public Customer find(String phoneNumber) {
-		return null;
+		Customer c = customerDetails.get(phoneNumber);
+		return c;
 	}
 
 }
