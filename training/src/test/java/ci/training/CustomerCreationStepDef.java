@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.math.BigDecimal;
 
 import ci.training.beans.Customer;
+import ci.training.repo.WalletRepo;
 import ci.training.repo.WalletRepoClass;
 import ci.training.service.WalletServiceImpl;
 import cucumber.api.java.en.Given;
@@ -12,7 +13,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class CustomerCreationStepDef {
-	WalletRepoClass repo = new WalletRepoClass();;
+	WalletRepo repo = new WalletRepoClass();
 	WalletServiceImpl walletService;
 	Customer res;
 	Customer result;

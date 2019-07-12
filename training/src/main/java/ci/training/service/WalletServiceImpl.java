@@ -37,7 +37,6 @@ public class WalletServiceImpl implements WalletService{
 	}
 
 	public Customer withdraw(String phone, BigDecimal amount) {
-		// TODO Auto-generated method stub
 		Customer c = repo.find(phone);
 		if(c == null){
 			return null;
